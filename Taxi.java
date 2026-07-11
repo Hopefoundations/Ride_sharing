@@ -1,38 +1,20 @@
-
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
 class Taxi extends Vehicle {
+   private double ratePerKm = (double)15.0F;
 
-    // Constructor
-    Taxi(String vehicleId,
-         String category,
-         String driverName,
-         double driverRating,
-         double ratePerKm) {
+   Taxi(String vehicleId) {
+      super(vehicleId);
+   }
 
-        super(vehicleId,
-              category,
-              driverName,
-              driverRating,
-              ratePerKm);
-    }
+   public double getRatePerKm() {
+      return this.ratePerKm;
+   }
 
-    // Fare Calculation
-    @Override
-    public double calculateFare(int distance) {
+   public void setRatePerKm(double ratePerKm) {
+      this.ratePerKm = ratePerKm;
+   }
 
-        return distance * ratePerKm;
-    }
-
-    // Display Taxi Details
-    public void displayTaxiDetails() {
-
-        System.out.println("------------------------------");
-        System.out.println("Taxi ID      : " + vehicleId);
-        System.out.println("Category     : " + category);
-        System.out.println("Driver       : " + driverName);
-        System.out.println("Rating       : " + driverRating + " ★");
-        System.out.println("Fare / Km    : ₹" + ratePerKm);
-        System.out.println("Status       : "
-                + (available ? "Available" : "Booked"));
-        System.out.println("------------------------------");
-    }
+   public double calculateFare(int distance) {
+      return (double)distance * this.ratePerKm;
+   }
 }
