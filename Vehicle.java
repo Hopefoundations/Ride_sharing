@@ -5,13 +5,13 @@
 
 abstract class Vehicle {
 
-    // Vehicle Information
+    // Common Vehicle Details
     protected String vehicleId;
-    protected boolean available;
     protected String category;
     protected String driverName;
     protected double driverRating;
     protected double ratePerKm;
+    protected boolean available;
 
     // Constructor
     Vehicle(String vehicleId,
@@ -28,7 +28,9 @@ abstract class Vehicle {
         this.available = true;
     }
 
-    // Getters
+    // ----------------------------
+    // Getter Methods
+    // ----------------------------
 
     public String getVehicleId() {
         return vehicleId;
@@ -54,17 +56,51 @@ abstract class Vehicle {
         return available;
     }
 
-    // Setters
-
-    public void setDriverRating(double driverRating) {
-        this.driverRating = driverRating;
-    }
+    // ----------------------------
+    // Setter Methods
+    // ----------------------------
 
     public void setAvailable(boolean available) {
         this.available = available;
     }
 
+    public void setDriverRating(double driverRating) {
+        this.driverRating = driverRating;
+    }
+
+    // ----------------------------
+    // Display Vehicle Details
+    // ----------------------------
+
+    public void displayVehicle() {
+
+        System.out.println("--------------------------------");
+        System.out.println("Vehicle ID   : " + vehicleId);
+        System.out.println("Category     : " + category);
+        System.out.println("Driver       : " + driverName);
+        System.out.println("Rating       : " + driverRating + " ★");
+        System.out.println("Fare / Km    : ₹" + ratePerKm);
+        System.out.println("Status       : "
+                + (available ? "Available" : "Booked"));
+        System.out.println("--------------------------------");
+    }
+
+    // ----------------------------
+    // String Representation
+    // ----------------------------
+
+    @Override
+    public String toString() {
+
+        return vehicleId + " | "
+                + category + " | "
+                + driverName + " | ₹"
+                + ratePerKm + "/km";
+    }
+
+    // ----------------------------
     // Abstract Method
+    // ----------------------------
 
     public abstract double calculateFare(int distance);
 }
