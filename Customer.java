@@ -1,27 +1,32 @@
+// ======================================
+// Customer.java
+// Customer Class
+// ======================================
+
 class Customer {
 
-    // Encapsulation
+    // Customer Details
     private int customerId;
     private String customerName;
     private String mobileNumber;
-    private String pickup;
-    private String drop;
+    private String pickupLocation;
+    private String dropLocation;
 
     // Constructor
     Customer(int customerId,
              String customerName,
              String mobileNumber,
-             String pickup,
-             String drop) {
+             String pickupLocation,
+             String dropLocation) {
 
         this.customerId = customerId;
         this.customerName = customerName;
         this.mobileNumber = mobileNumber;
-        this.pickup = pickup;
-        this.drop = drop;
+        this.pickupLocation = pickupLocation;
+        this.dropLocation = dropLocation;
     }
 
-    // Getter Methods
+    // Getters
 
     public int getCustomerId() {
         return customerId;
@@ -35,15 +40,15 @@ class Customer {
         return mobileNumber;
     }
 
-    public String getPickup() {
-        return pickup;
+    public String getPickupLocation() {
+        return pickupLocation;
     }
 
-    public String getDrop() {
-        return drop;
+    public String getDropLocation() {
+        return dropLocation;
     }
 
-    // Setter Methods
+    // Setters
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
@@ -53,11 +58,24 @@ class Customer {
         this.mobileNumber = mobileNumber;
     }
 
-    public void setPickup(String pickup) {
-        this.pickup = pickup;
+    public void setPickupLocation(String pickupLocation) {
+        this.pickupLocation = pickupLocation;
     }
 
-    public void setDrop(String drop) {
-        this.drop = drop;
+    public void setDropLocation(String dropLocation) {
+        this.dropLocation = dropLocation;
+    }
+
+    // Display Customer Details
+
+    public void displayCustomer() {
+
+        System.out.println("--------------------------------");
+        System.out.println("Customer ID    : " + customerId);
+        System.out.println("Customer Name  : " + customerName);
+        System.out.println("Mobile Number  : " + mobileNumber);
+        System.out.println("Pickup         : " + pickupLocation);
+        System.out.println("Drop           : " + dropLocation);
+        System.out.println("--------------------------------");
     }
 }
