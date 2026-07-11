@@ -5,7 +5,6 @@
 
 class Booking {
 
-    // Booking Details
     private String bookingId;
     private Customer customer;
     private Vehicle taxi;
@@ -20,7 +19,6 @@ class Booking {
 
     private boolean bookingStatus;
 
-    // Constructor
     Booking(String bookingId,
             Customer customer,
             Vehicle taxi,
@@ -41,10 +39,6 @@ class Booking {
         this.discountAmount = discountAmount;
         this.bookingStatus = bookingStatus;
     }
-
-    // -------------------------
-    // Getter Methods
-    // -------------------------
 
     public String getBookingId() {
         return bookingId;
@@ -82,85 +76,47 @@ class Booking {
         return bookingStatus;
     }
 
-    // -------------------------
-    // Setter Methods
-    // -------------------------
-
     public void setBookingStatus(boolean bookingStatus) {
         this.bookingStatus = bookingStatus;
     }
 
-    // -------------------------
-    // Display Booking
-    // -------------------------
-
     public void displayBooking() {
 
-        System.out.println();
-
+        System.out.println("\n======================================");
+        System.out.println("          BOOKING DETAILS");
         System.out.println("======================================");
 
-        System.out.println("           BOOKING DETAILS");
-
-        System.out.println("======================================");
-
-        System.out.println("Booking ID      : "
-                + bookingId);
-
-        System.out.println("Customer ID     : "
-                + customer.getCustomerId());
-
-        System.out.println("Customer Name   : "
-                + customer.getCustomerName());
-
-        System.out.println("Mobile Number   : "
-                + customer.getMobileNumber());
+        System.out.println("Booking ID      : " + bookingId);
+        System.out.println("Customer ID     : " + customer.getCustomerId());
+        System.out.println("Customer Name   : " + customer.getCustomerName());
+        System.out.println("Mobile Number   : " + customer.getMobileNumber());
 
         System.out.println();
 
-        System.out.println("Taxi ID         : "
-                + taxi.getVehicleId());
-
-        System.out.println("Category        : "
-                + taxi.getCategory());
-
-        System.out.println("Driver          : "
-                + taxi.getDriverName());
-
-        System.out.println("Driver Rating   : "
-                + taxi.getDriverRating());
+        System.out.println("Taxi ID         : " + taxi.getVehicleId());
+        System.out.println("Category        : " + taxi.getCategory());
+        System.out.println("Driver          : " + taxi.getDriverName());
+        System.out.println("Driver Rating   : " + taxi.getDriverRating());
 
         System.out.println();
 
-        System.out.println("Pickup          : "
-                + customer.getPickupLocation());
+        System.out.println("Pickup          : " + customer.getPickupLocation());
+        System.out.println("Drop            : " + customer.getDropLocation());
 
-        System.out.println("Drop            : "
-                + customer.getDropLocation());
-
-        System.out.println("Distance        : "
-                + distance + " km");
+        System.out.println("Distance        : " + distance + " km");
 
         System.out.println();
 
-        System.out.println("Coupon          : "
-                + couponCode);
-
-        System.out.println("Discount        : ₹"
-                + discountAmount);
-
-        System.out.println("Final Fare      : ₹"
-                + fare);
+        System.out.println("Coupon          : " + couponCode);
+        System.out.println("Discount        : ₹" + discountAmount);
+        System.out.println("Final Fare      : ₹" + fare);
 
         System.out.println();
 
-        System.out.println("Payment Method  : "
-                + paymentMethod);
+        System.out.println("Payment Method  : " + paymentMethod);
 
         System.out.println("Booking Status  : "
-                + (bookingStatus
-                ? "Confirmed"
-                : "Cancelled"));
+                + (bookingStatus ? "Confirmed" : "Cancelled"));
 
         System.out.println("======================================");
     }
