@@ -6,7 +6,7 @@
 class Customer {
 
     // Customer Details
-    private int customerId;
+    private final int customerId;
     private String customerName;
     private String mobileNumber;
     private String pickupLocation;
@@ -58,24 +58,28 @@ class Customer {
         this.mobileNumber = mobileNumber;
     }
 
-    public void setPickupLocation(String pickupLocation) {
-        this.pickupLocation = pickupLocation;
-    }
-
-    public void setDropLocation(String dropLocation) {
-        this.dropLocation = dropLocation;
-    }
-
     // Display Customer Details
 
     public void displayCustomer() {
 
-        System.out.println("--------------------------------");
-        System.out.println("Customer ID    : " + customerId);
-        System.out.println("Customer Name  : " + customerName);
-        System.out.println("Mobile Number  : " + mobileNumber);
-        System.out.println("Pickup         : " + pickupLocation);
-        System.out.println("Drop           : " + dropLocation);
-        System.out.println("--------------------------------");
+        System.out.println("\n========== CUSTOMER DETAILS ==========");
+
+        System.out.println("Customer ID      : " + customerId);
+        System.out.println("Customer Name    : " + customerName);
+        System.out.println("Mobile Number    : " + mobileNumber);
+        System.out.println("Pickup Location  : " + pickupLocation);
+        System.out.println("Drop Location    : " + dropLocation);
+
+        System.out.println("======================================");
+    }
+
+    @Override
+    public String toString() {
+
+        return "Customer ID : " + customerId +
+               "\nCustomer Name : " + customerName +
+               "\nMobile Number : " + mobileNumber +
+               "\nPickup : " + pickupLocation +
+               "\nDrop : " + dropLocation;
     }
 }
