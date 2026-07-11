@@ -1,17 +1,38 @@
 class Customer {
 
-    private final String customerName;
-    private final String pickup;
-    private final String drop;
+    // Encapsulation
+    private int customerId;
+    private String customerName;
+    private String mobileNumber;
+    private String pickup;
+    private String drop;
 
-    Customer(String customerName, String pickup, String drop) {
+    // Constructor
+    Customer(int customerId,
+             String customerName,
+             String mobileNumber,
+             String pickup,
+             String drop) {
+
+        this.customerId = customerId;
         this.customerName = customerName;
+        this.mobileNumber = mobileNumber;
         this.pickup = pickup;
         this.drop = drop;
     }
 
+    // Getter Methods
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
     public String getCustomerName() {
         return customerName;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 
     public String getPickup() {
@@ -20,5 +41,23 @@ class Customer {
 
     public String getDrop() {
         return drop;
+    }
+
+    // Setter Methods
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public void setPickup(String pickup) {
+        this.pickup = pickup;
+    }
+
+    public void setDrop(String drop) {
+        this.drop = drop;
     }
 }
