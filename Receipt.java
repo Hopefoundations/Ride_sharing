@@ -34,32 +34,20 @@ class Receipt {
 
         System.out.println("Pickup          : " + customer.getPickupLocation());
         System.out.println("Drop            : " + customer.getDropLocation());
-
-        System.out.println("Distance        : "
-                + booking.getDistance() + " km");
+        System.out.println("Distance        : " + booking.getDistance() + " km");
 
         System.out.println("----------------------------------------------");
 
-        System.out.println("Coupon Applied  : "
-                + booking.getCouponCode());
-
-        System.out.println("Discount        : ₹"
-                + booking.getDiscountAmount());
-
-        System.out.println("Final Fare      : ₹"
-                + booking.getFare());
-
-        System.out.println("Payment Method  : "
-                + booking.getPaymentMethod());
+        System.out.println("Coupon Applied  : " + booking.getCouponCode());
+        System.out.println("Discount        : ₹" + booking.getDiscountAmount());
+        System.out.println("Final Fare      : ₹" + booking.getFare());
+        System.out.println("Payment Method  : " + booking.getPaymentMethod());
 
         System.out.println("----------------------------------------------");
 
         if (booking.isBookingStatus()) {
-
             System.out.println("Booking Status  : CONFIRMED");
-
         } else {
-
             System.out.println("Booking Status  : CANCELLED");
         }
 
