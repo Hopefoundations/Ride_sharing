@@ -1,68 +1,38 @@
-class Taxi extends Vehicle {
 
-    private double ratePerKm;
-    private String category;
-    private String driverName;
-    private double rating;
+class Taxi extends Vehicle {
 
     // Constructor
     Taxi(String vehicleId,
-         double ratePerKm,
          String category,
          String driverName,
-         double rating) {
+         double driverRating,
+         double ratePerKm) {
 
-        super(vehicleId);
-
-        this.ratePerKm = ratePerKm;
-        this.category = category;
-        this.driverName = driverName;
-        this.rating = rating;
+        super(vehicleId,
+              category,
+              driverName,
+              driverRating,
+              ratePerKm);
     }
 
-    // Getter for Fare
-    public double getRatePerKm() {
-        return ratePerKm;
-    }
-
-    // Setter for Fare
-    public void setRatePerKm(double ratePerKm) {
-        this.ratePerKm = ratePerKm;
-    }
-
-    // Getter for Category
-    public String getCategory() {
-        return category;
-    }
-
-    // Setter for Category
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    // Getter for Driver Name
-    public String getDriverName() {
-        return driverName;
-    }
-
-    // Setter for Driver Name
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
-    }
-
-    // Getter for Rating
-    public double getRating() {
-        return rating;
-    }
-
-    // Setter for Rating
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    // Calculate Fare
+    // Fare Calculation
     @Override
     public double calculateFare(int distance) {
+
         return distance * ratePerKm;
+    }
+
+    // Display Taxi Details
+    public void displayTaxiDetails() {
+
+        System.out.println("------------------------------");
+        System.out.println("Taxi ID      : " + vehicleId);
+        System.out.println("Category     : " + category);
+        System.out.println("Driver       : " + driverName);
+        System.out.println("Rating       : " + driverRating + " ★");
+        System.out.println("Fare / Km    : ₹" + ratePerKm);
+        System.out.println("Status       : "
+                + (available ? "Available" : "Booked"));
+        System.out.println("------------------------------");
     }
 }
